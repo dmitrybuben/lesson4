@@ -20,9 +20,6 @@ import java.util.Scanner;
 public class Program {
 
     private static final Scanner scanner = new Scanner(System.in);
-    private static int A = createAccount();
-    private static int B = depositAccount();
-
 
     public static void main(String[] args) {
         try {
@@ -75,7 +72,7 @@ public class Program {
         return depositBalanceAmount;
     }
 
-    public static int withdrawAmount() throws InsufficientFundsException {
+    public static void withdrawAmount() throws InsufficientFundsException {
         int amountToWithdraw = 0;
         System.out.println("Enter amount to withdraw: ");
         try {
@@ -83,10 +80,9 @@ public class Program {
         } catch (NumberFormatException e) {
             System.out.println("Check if amount is a number");
         }
-        //scanner.close();
         if ((createAccount() + depositAccount()) < amountToWithdraw) {
             throw new InsufficientFundsException();
         }
-        return amountToWithdraw;
+        scanner.close();
     }
 }
