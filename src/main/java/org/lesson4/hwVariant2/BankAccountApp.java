@@ -7,7 +7,7 @@ public class BankAccountApp {
             Account account = new Account(1000);
 
             // Вносим депозит
-            account.deposit(500);
+            account.deposit(-1500);
 
             // Пытаемся снять средства больше, чем есть на счете
             account.withdraw(2000);
